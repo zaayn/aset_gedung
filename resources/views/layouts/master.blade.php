@@ -19,6 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/fullcalendar.min.css')}}"/>
 	<link href="{{asset('asset/css/style.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/datatables.bootstrap.min.css')}}"/>
+    
     <!-- end: Css -->
     @yield('css')
 	<link rel="shortcut icon" href="{{asset('asset/img/logomi.png')}}">
@@ -75,23 +76,11 @@
                       <p class="animated fadeInRight">Sat,October 1st 2029</p>
                     </li>
                     
-                    <li class="ripple"><a href="{{asset('/admin/home')}}"><span class="fa fa-home"></span>Dashboard</a></li>
-                    <li class="ripple"><a href="{{asset('/admin/user')}}"><span class="fa fa-users"></span>User</a></li>
-                    <li class="ripple"><a href="{{asset('/admin/post')}}"><span class="fa fa-sticky-note "></span>Post</a></li>
-                    <li class="ripple"><a href="{{asset('/admin/khataman')}}"><span class="fa fa-book"></span>Khataman</a></li>
-                    <li class="ripple"><a href="{{asset('/admin/donasi')}}"><span class="fa fa-dollar"></span>Donasi</a></li>
-                    <li class="ripple"><a href="{{asset('/admin/data')}}"><span class="fa fa-database"></span>Data SSDA</a></li>
-
-                    {{-- <li class="ripple">
-                      <a class="tree-toggle nav-header">
-                        <span class="fa-diamond fa"></span> Transaksi
-                        <span class="fa-angle-right fa right-arrow text-right"></span>
-                      </a>
-                      <ul class="nav nav-list tree">
-                        <li><a href="/admin/waiting">Waiting</a></li>
-                        <li><a href="/admin/rekap">Rekap Transaksi</a></li>
-                      </ul>
-                    </li> --}}
+                    <li class="ripple"><a href="{{asset('/home')}}"><span class="fa fa-home"></span>Dashboard</a></li>
+                    <li class="ripple"><a href="{{asset('/user')}}"><span class="fa fa-users"></span>User</a></li>
+                    <li class="ripple"><a href="{{asset('/kampus')}}"><span class="fa fa-university"></span>Kampus</a></li>
+                    <li class="ripple"><a href="{{asset('/gedung')}}"><span class="fa fa-building"></span>Gedung</a></li>
+                    <li class="ripple"><a href="{{asset('/ruang')}}"><span class="fa fa-cubes"></span>Ruang</a></li>
                     
                   </ul>
                 </div>
@@ -100,10 +89,10 @@
 
   		
           <!-- start: content -->
-            <div id="content">
-                @yield('content_header')
-                @yield('content')
-            </div>
+          <div id="content">
+            @yield('content_header')
+            @yield('content')
+        </div>
           <!-- end: content -->
       </div>
 
