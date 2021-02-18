@@ -20,30 +20,30 @@
       <div class="panel">
         <div class="panel-heading"><h3>Edit Kampus</h3></div>
           <div class="panel-body">
-            @foreach($kampus as $camp)
-            <form action="{{route('update.kampus', $camp->k_id)}}" method="post">
+            @foreach($gedungs as $gedung)
+            <form action="{{route('update.gedung', $gedung->g_id)}}" method="post">
                 @csrf
                 @method('put')
                 <div class="form-group">
                     <label>Penanggung Jawab</label>
-                    <select class="form-control select2-A" name="email">
+                    <select class="form-control select2-A" name="k_id" required>
                         <option></option>
-                        @foreach($users as $user)
-                            <option value="{{ $user->email }}">{{ $user->name }} </option>
+                        @foreach($kampuses as $kampus)
+                            <option value="{{ $kampus->k_id }}">{{ $kampus->k_nama }} </option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
-                  <label>Nama Kampus :</label>
-                  <div><input id="k_nama" type="text" class="form-control" name="k_nama" value="{{ $camp->k_nama }}" required autofocus></div>
+                  <label>Nama Gedung :</label>
+                  <div><input id="g_nama" type="text" class="form-control" name="g_nama" value="{{ $gedung->g_nama }}" required autofocus></div>
                 </div>
 				<div class="form-group">
-                  <label>Lokasi Kampus :</label>
-                  <div><input id="k_lokasi" type="text" class="form-control" name="k_lokasi" value="{{ $camp->k_lokasi }}" required></div>
+                  <label>Lokasi Gedung :</label>
+                  <div><input id="g_lokasi" type="text" class="form-control" name="g_lokasi" value="{{ $gedung->g_lokasi }}" required></div>
 				</div>
 
                 <button type="submit" class="btn btn-primary ">Submit</button>
-                <a onclick="return confirm('Perubahan anda belum disimpan. Tetap tinggalkan halaman ini ?')" href="{{('/superadmin/user')}}" class="btn btn-secondary"> Cancel</a>
+                <a onclick="return confirm('Perubahan anda belum disimpan. Tetap tinggalkan halaman ini ?')" href="/gedung" class="btn btn-secondary"> Cancel</a>
             </form>
             @endforeach
 
@@ -55,7 +55,7 @@
 @section('js')
 <script>
  $(".select2-A").select2({
-      placeholder: "Pilih User",
+      placeholder: "Pilih Kampus",
       allowClear: true
     });
 </script>

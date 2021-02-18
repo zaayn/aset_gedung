@@ -4,10 +4,10 @@
   <div class="col-md-12">
       <div class="panel block">
           <div class="panel-body">
-              <h1>Kelola Admin</h1>
+              <h1>Kelola Gedung</h1>
               <ol class="breadcrumb">
-                  <li><a href="{{asset('/admin/tambahadmin')}}"></i>kampus</a></li>
-                  <li class="active">Tambah Kampus</li>
+                  <li><a href="{{asset('/admin/tambahadmin')}}"></i>Gedung</a></li>
+                  <li class="active">Tambah Gedung</li>
               </ol>
           </div>
       </div>
@@ -18,30 +18,30 @@
  <div class="col-md-12 top-20 padding-0">
     <div class="col-md-12">
       <div class="panel">
-        <div class="panel-heading"><h3>Tambah Kampus</h3></div>
+        <div class="panel-heading"><h3>Tambah Gedung</h3></div>
           <div class="panel-body">
             @include('layouts.shared.components.alert') 
-            <form action="{{route('store.kampus')}}" method="post">
+            <form action="{{route('store.gedung')}}" method="post">
                 {{ csrf_field() }} 
 
                 <div class="form-group">
-                    <label>Penanggung Jawab :</label>
+                    <label>Kampus :</label>
                     <div>
-                        <select class="form-control select2-A" name="email" required>
+                        <select class="form-control select2-A" name="k_id" required>
                             <option></option>
-                        @foreach($users as $user)
-                            <option value="{{ $user->email }}">{{ $user->name }}</option>
+                        @foreach($kampuses as $kampus)
+                            <option value="{{ $kampus->k_id }}">{{ $kampus->k_nama }}</option>
                         @endforeach
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
-                  <label>Nama Kampus :</label>
-                  <div><input type="text" class="form-control"  name="k_nama" required></div>
+                  <label>Nama Gedung :</label>
+                  <div><input type="text" class="form-control"  name="g_nama" required></div>
                 </div>
 				<div class="form-group">
-                  <label>Lokasi Kampus :</label>
-                  <div><input type="text" class="form-control"  name="k_lokasi" required></div>
+                  <label>Lokasi gedung :</label>
+                  <div><input type="text" class="form-control"  name="g_lokasi" required></div>
 				</div>
 
                 <button type="submit" class="btn btn-primary ">Submit</button>
@@ -57,8 +57,10 @@
 @section('js')
 <script>
  $(".select2-A").select2({
-      placeholder: "Pilih User",
+      placeholder: "Pilih Kampus",
       allowClear: true
     });
 </script>
 @endsection
+
+

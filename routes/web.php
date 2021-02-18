@@ -34,3 +34,17 @@ Route::post('/store/kampus', [App\Http\Controllers\KampusController::class, 'sto
 Route::get('/delete/kampus/{id}',[App\Http\Controllers\KampusController::class, 'delete'])->name('delete.kampus');
 Route::get('/edit/kampus/{id}',[App\Http\Controllers\KampusController::class, 'edit'])->name('edit.kampus');
 Route::put('/update/kampus/{id}',[App\Http\Controllers\KampusController::class, 'update'])->name('update.kampus');
+
+Route::get('/gedung', [App\Http\Controllers\GedungController::class, 'index'])->name('gedung');
+Route::get('/add_gedung', [App\Http\Controllers\GedungController::class, 'insert'])->name('add.gedung');
+Route::post('/store/gedung', [App\Http\Controllers\GedungController::class, 'store'])->name('store.gedung');
+Route::get('/delete/gedung/{id}',[App\Http\Controllers\GedungController::class, 'delete'])->name('delete.gedung');
+Route::get('/edit/gedung/{id}',[App\Http\Controllers\GedungController::class, 'edit'])->name('edit.gedung');
+Route::put('/update/gedung/{id}',[App\Http\Controllers\GedungController::class, 'update'])->name('update.gedung');
+
+Route::get('/ruang', [App\Http\Controllers\RuangController::class, 'index'])->name('ruang');
+Route::get('/add_ruang', [App\Http\Controllers\RuangController::class, 'insert'])->name('add.ruang');
+Route::post('/store/ruang', [App\Http\Controllers\RuangController::class, 'store'])->name('store.ruang');
+Route::get('/delete/ruang/{id}',[App\Http\Controllers\RuangController::class, 'delete'])->name('delete.ruang');
+Route::get('/edit/ruang/{id}',[App\Http\Controllers\RuangController::class, 'edit'])->name('edit.ruang');
+Route::put('/update/ruang/{id}',[App\Http\Controllers\RuangController::class, 'update'])->name('update.ruang');

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Gedung;
+use App\Models\Kampus;
+use App\Models\Ruang;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +27,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['user'] = User::count();
+        $data['kampus'] = Kampus::count();
+        $data['gedung'] = Gedung::count();
+        $data['ruang'] = Ruang::count();
+        return view('home',$data);
     }
 }

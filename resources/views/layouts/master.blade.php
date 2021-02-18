@@ -3,11 +3,10 @@
 <head>
 	
 	<meta charset="utf-8">
-	<meta name="description" content="Miminium Admin Template v.1">
 	<meta name="author" content="Muzayyin">
 	<meta name="keyword" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Miminium</title>
+    <title>UISI</title>
  
     <!-- start: Css -->
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/bootstrap.min.css')}}">
@@ -16,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/font-awesome.min.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/simple-line-icons.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/animate.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/select2.min.css')}}"/>
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/fullcalendar.min.css')}}"/>
 	<link href="{{asset('asset/css/style.css')}}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('asset/css/plugins/datatables.bootstrap.min.css')}}"/>
@@ -37,7 +37,7 @@
                 <span class="bottom"></span>
               </div>
                 <a href="index.html" class="navbar-brand"> 
-                 <b>MIMIN</b>
+                 <b>UISI</b>
                 </a>
                 
               <ul class="nav navbar-nav navbar-right user-nav">
@@ -112,6 +112,7 @@
     <script src="{{asset('asset/js/plugins/chart.min.js')}}"></script>
     <script src="{{asset('asset/js/plugins/jquery.datatables.min.js')}}"></script>
     <script src="{{asset('asset/js/plugins/datatables.bootstrap.min.js')}}"></script>
+    <script src="{{asset('asset/js/plugins/select2.full.min.js')}}"></script>
 
     <!-- custom js-->
     <script src="{{asset('asset/js/main.js')}}"></script>

@@ -57,8 +57,8 @@
                             </div>
                         </div>
                         <div class="panel-body text-center">
-                            <h1>51181,320</h1>
-                            <p>User active</p>
+                            <h1>{{$user}}</h1>
+                            <p>User Aktif</p>
                             <hr/>
                         </div>
                     </div>
@@ -78,8 +78,8 @@
                             </div>
                         </div>
                         <div class="panel-body text-center">
-                            <h1>51181,320</h1>
-                            <p>User active</p>
+                            <h1>{{$kampus}}</h1>
+                            <p>Total Kampus</p>
                             <hr/>
                         </div>
                     </div>
@@ -99,8 +99,8 @@
                             </div>
                         </div>
                         <div class="panel-body text-center">
-                            <h1>51181,320</h1>
-                            <p>User active</p>
+                            <h1>{{$gedung}}</h1>
+                            <p>Total Gedung</p>
                             <hr/>
                         </div>
                     </div>
@@ -120,8 +120,8 @@
                             </div>
                         </div>
                         <div class="panel-body text-center">
-                            <h1>51181,320</h1>
-                            <p>User active</p>
+                            <h1>{{$ruang}}</h1>
+                            <p>Total Ruang</p>
                             <hr/>
                         </div>
                     </div>

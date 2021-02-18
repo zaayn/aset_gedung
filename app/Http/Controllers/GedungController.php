@@ -3,82 +3,70 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Gedung;
+use App\Models\Kampus;
 
 class GedungController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $data['no'] = 1;
+        $data['gedungs'] = Gedung::all();
+        return view('gedung/gedung',$data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function insert()
     {
-        //
+        $data['kampuses'] = Kampus::all();
+        return view('gedung/add_gedung',$data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'g_nama'            =>['required', 'string'],
+            'g_lokasi'          =>['required', 'string'],
+            ]);
+
+        $gedung = new gedung;
+        $gedung->k_id              = $request->k_id;
+        $gedung->g_nama            = $request->g_nama;
+        $gedung->g_lokasi           = $request->g_lokasi;        
+
+        if ($gedung->save()){
+            return redirect('/add_gedung')->with('success', 'item berhasil ditambahkan');
+        }
+        else{
+            return redirect('/add_gedung')->with('error', 'item gagal ditambahkan');
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $data['kampuses'] = Kampus::all();
+        $gedung = Gedung::where('g_id',$id)->get();
+        return view('/gedung/edit_gedung',$data)->with('gedungs',$gedung);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $gedung = Gedung::findorFail($id);
+        $this->validate($request,[
+            'g_nama'         =>['required', 'string'],
+            'g_lokasi'         =>['required', 'string'],
+        ]);
+            $gedung->k_id          = $request->k_id;
+            $gedung->g_nama          = $request->g_nama;
+            $gedung->g_lokasi        = $request->g_lokasi;
+  
+        if ($gedung->save())
+          return redirect()->route('gedung')->with(['success'=>'edit sukses']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function delete($g_id)
     {
-        //
+        $gedung = Gedung::where('g_id',$g_id)->delete();
+        return redirect()->route('gedung')->with('success', 'delete sukses');
     }
 }
